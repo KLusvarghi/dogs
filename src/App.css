@@ -1,4 +1,41 @@
-input {
+ * {
+  box-sizing: border-box;
+ }
+
+ body {
+  margin: 0px;
+  padding: 0px;
+  color: #333;
+  --type-first: Helvetica, Arial, sans-serif;
+  --type-secound: 'Spectral', Georgia;
+  font-family: var(--type-first);
+ }
+
+ h1, h2, h3, h4, p {
+  margin: 0px;
+ }
+
+ ul, li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+ }
+
+ img {
   display: block;
-  margin-bottom: 1rem;
-}
+  max-width: 100%; /* Assim ela espante até o tamanho toral da tela ou do cntainer que segura ela */
+ }
+ button, input {
+  display: block;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  color: #333;
+ }
+
+ /* Será o item que irá segurar boa parte do conteúdo */
+ .container {
+  max-width: 50rem; /* que é igual a 800px */
+  padding: 0 1rem;
+  margin: 0 auto; /* para alinha ao centro */
+ }
+
