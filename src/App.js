@@ -13,7 +13,8 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          {/* tendo que dizer que dentro de /login teá outras subrotas, passando o '/*'  */}
+          <Route path="/login/*" element={<Login />} />
         </Routes>
         <Footer />
       </BrowserRouter>
