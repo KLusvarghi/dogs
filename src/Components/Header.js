@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
+import { ReactComponent as LogDogs } from '../Assets/dogs.svg'; // inportando o svg
 
 const Header = () => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       {/* Meu header tendo navegação para a página raiz (home), e para a página de Login */}
-      <nav className='container'>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login / Criar</Link>
+      <nav className={`${styles.nav} container`}>
+        <Link className={styles.logo} to="/" aria-label='Dogs - Home'> {/* Sendo o 'aria-label' para acessibilidade */}
+          <LogDogs />
+        </Link>
+        <Link className={styles.login} to="/login">Login / Criar</Link>
       </nav>
-    </div>
+    </header>
   );
 };
 
