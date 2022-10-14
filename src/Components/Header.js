@@ -6,7 +6,7 @@ import { UserContext } from '../UserContext';
 
 const Header = () => {
   // para ter acesso ao value do userStorage:
-  const { data } = React.useContext(UserContext);
+  const { data, userLogOut } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -21,6 +21,7 @@ const Header = () => {
         {data ? (
           <Link className={styles.login} to="/conta">
             {data.nome}
+            <button onClick={userLogOut}>Sair</button>
           </Link>
         ) : (
           <Link className={styles.login} to="/login">
