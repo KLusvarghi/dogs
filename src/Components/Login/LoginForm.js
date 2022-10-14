@@ -13,16 +13,16 @@ const LoginForm = () => {
   // console.log(password.value)
 
   // já desestruturando o meu userLogin
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     if (username.validate() && password.validate()) {
       // assim ele tendo que validar os inputs antes de fazer o fech e validar o usuário
-      
+
       // usando o userContex, simplificando as coisas
-      userLogin(username.value, password.value)
+      userLogin(username.value, password.value);
     }
   }
 
@@ -32,7 +32,13 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+
+        {error && <p>{error}</p>}
       </form>
 
       <Link to="/login/criar">Cadastro</Link>
