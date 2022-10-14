@@ -1,40 +1,65 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
+import useForm from '../../Hooks/useForm';
+import { TOKEN_POST, USER_GET } from '../../api';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const username = useForm();
+  const password = useForm();
+  // sendo esse items que eu irei enviar para fazer o fetch
+  // console.log(username.value)
+  // console.log(password.value)
 
-  function handleSubmit(event) {
+  // Caso ao site montar na tela já tenha um token do usuário no localSorage, ele já valida para mim
+
+  useEffect(() => {
+    // puxando o toquem do localstorage se houver
+    const getToken = window.localStorage.getItem('token')
+    if(getToken){
+      getUser(getToken)
+    }
+  }, [])
+
+
+  async function getUser(token) { // função para puzar o Usuário
+    const {url, options} = USER_GET(token)
+    const response = await fetch(url, options)
+    const json = await response.json()
+    console.log(json)
+  }
+
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    // essa é a url para fazer ogin, que na verdade estará puxando o token do usuário para autenticação
 
-    fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json();
+    if (username.validate() && password.validate()) { // assim ele tendo que validar os inputs antes de fazer o fech e validar o usuário
+
+      // desestruturando o que vem de TOKEN_POST
+      const {url, options} = TOKEN_POST({ // vindo minha api e options de TOKEN_POST
+        username: username.value,
+        password: password.value,
       })
-      .then((json) => {
-        console.log(json);
-        return json;
-      });
+
+
+      const response = await fetch(url, options)
+      const json = await response.json()
+      //console.log(json) // me retornando o toke do usuário
+
+      // Passando o token para o localstorage
+      window.localStorage.setItem('token', json.token)
+      getUser(json.token)
+    }
   }
 
   return (
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" value={username} name="username" />
-        <Input label="Senha" type="password" value={password} name="password" />
+        <Input label="Usuário" type="text" name="username" {...username} />
+        <Input label="Senha" type="password" name="password" {...password} />
         <Button>Entrar</Button>
       </form>
 
