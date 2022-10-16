@@ -1,0 +1,32 @@
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  min-height: 100vh; /* Para que ocupe 100 da tela e o foter vá lá para baixo */
+}
+
+.login::before {
+  content: '';
+  display: block;
+  background: url('../../Assets/login.jpg') no-repeat center center;
+  background-size: cover; /* Assim ele não vai só tentar cobrir a imagem inteira e deixar em um tamanho normal*/
+}
+
+.forms {
+  max-width: 30rem;
+  padding: 1rem;
+}
+
+@media (max-width: 40rem) { /* é a mesma coisa que 640px */
+  .login {
+    grid-template-columns: 1fr;
+  }
+
+  .login::before {
+    display: none;
+  }
+
+  .forms{
+    max-width: 100%;
+  }
+}
