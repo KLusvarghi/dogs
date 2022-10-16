@@ -85,6 +85,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      }else {
+        setLogin(false) // setando o login para false caso não tenha nenhum token
       }
     }
     autoLogin();
