@@ -14,7 +14,8 @@ const useForm = (type) => { // recebendo o tipo de input
   const [value, setValue] = useState('') // irá conter o valor do input
   const [error, setError] = useState(null) // irá conter os erros
 
-  function validate(value) { // recebendo  ovalor do input
+  // função responsavel por validar o input
+  function validate(value) { // recebendo  o valor do input
     if(type === false) return true //ele verifica se tem algum tipo de validação, caso não tenha, ele retorna como true e segue a vida
     if(value.length === 0){
       setError('Preencha um valor')
@@ -32,7 +33,7 @@ const useForm = (type) => { // recebendo o tipo de input
   function onChange({target}){
     // ele só irá validar o valor casó já tenha acontecido algum error
     if(error) validate(target.value) // assim todas vez que ouver qualquer alteração no valor ele faça uma validação
-      setValue(target.value)
+    setValue(target.value)
   }
 
   return {
