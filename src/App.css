@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+
  * {
   box-sizing: border-box;
  }
@@ -8,7 +10,7 @@
   margin: 0px;
   color: #333;
   --type-first: Helvetica, Arial, sans-serif;
-  --type-secound: 'Spectral', Georgia;
+  --type-secound: 'Spectral', georgia;
   font-family: var(--type-first);
  }
 
@@ -17,6 +19,7 @@
  }
  a {
   text-decoration: none;
+  color: #333;
  }
 
  ul, li {
@@ -43,3 +46,41 @@
   margin: 0 auto; /* para alinha ao centro */
  }
 
+
+ .title {
+  font-family: var(--type-secound);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative; /* Porqueiremos colcoar um item sobre ele */
+  z-index: 1; /* Para garantir que ele fique a frente do marcador*/
+ }
+
+.title::after {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background:  #fb1;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1; /* Para ficar atrás do title*/
+}
+
+
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px); /* Sendo o estado inicial dele */ 
+  opacity: initial;
+  animation: animeLeft .3s forwards; /* o forwads que fdizer que ele vai terminar com o estado final da animação e só, não fará mais nada após isso*/
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
