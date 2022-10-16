@@ -43,3 +43,18 @@ export function USER_GET(token) {
     },
   };
 }
+
+
+// função para cadastrar / postar usuário
+export function USER_POST(body) { // recebendo emial, username e senha, que é o body
+  return {
+    url: API_URL + '/api/user',
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    },
+  };
+}
