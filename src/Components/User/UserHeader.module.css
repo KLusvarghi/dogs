@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto; /* A primeira coluna se expande em 1fr e o restante automatico com o que sobrar*/
+  align-items: center; /* Alinhando todos ao centro */
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative; /* Esse estilo para quando for aplicar o menu mobile */
+}
