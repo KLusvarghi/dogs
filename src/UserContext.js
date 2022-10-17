@@ -36,7 +36,6 @@ export const UserStorage = ({ children }) => {
     // sendo o setData as informações do usuário
     setData(json);
     setLogin(true);
-    console.log(json);
   }
 
   // Função para fazer login
