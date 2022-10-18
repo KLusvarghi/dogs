@@ -58,3 +58,17 @@ export function USER_POST(body) { // recebendo emial, username e senha, que é o
     },
   };
 }
+
+// Função para postar foto
+export function PHOTO_POST(formData, token) { // recebendo emial, username e senha, que é o body
+  return {
+    url: API_URL + '/api/photo',
+    options: {
+      method: 'POST',
+      headers: {
+        authorization: 'Bearer ' + token,
+      },
+      body: formData // passando assim por que por padrão o body entende arquivo do tipo data, e já estamos passando um do tipo Data
+    },
+  };
+}

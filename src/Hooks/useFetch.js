@@ -2,9 +2,8 @@ import React from 'react';
 
 // como o site utiliza o fetch da mesma maneira diversas vezes, foi criado esse hook para facilitar o trabalho
 
-
 const useFetch = () => {
-  // tendo no fetch o data que segura os dados
+  // tendo no fetch o 'data' que segura os dados
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [loading, setLoading] = React.useState(false);

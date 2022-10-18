@@ -7,6 +7,11 @@ const types = {
   email : {
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     messege: 'Usename inválido'
+  },
+  number: {
+    // o '^' quer dizer que ele tem que começar com. '\d' quer dizer que tem que ser digito. o '+' quer dizer que pode der um ou mais digitos. '$' quer dizer que tem que terminar com um digito
+    regex: /^\d+$/,
+    messege: 'Utilize apenas números'
   }
 }
 
