@@ -46,6 +46,10 @@
   margin: 0 auto; /* para alinha ao centro */
  }
 
+ .mainContainer {
+  margin-top: 4rem;
+ }
+
 
  .title {
   font-family: var(--type-secound);

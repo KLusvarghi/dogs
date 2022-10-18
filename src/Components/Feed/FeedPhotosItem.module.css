@@ -1,0 +1,49 @@
+/* Toda 'photo' que for a numerpo 2 terá esse estilo */ 
+.photo:nth-child(2) { 
+  grid-column: 2/4; /* para que ele ocupe da coluna 2 até a 4*/
+  grid-row: span 2; /* Para que ele espanda 2 linhas para baixo*/
+}
+
+@media (max-width: 40rem) {
+  .photo:nth-child(2){ /* Resetando as configurações */
+    grid-column: initial;
+    grid-row: initial;
+  }
+}
+
+.photo {
+  display: grid;
+  border-radius: 0.2rem;
+  overflow: hidden; /* Se eu não coloco overflow hiden ele não consege arredondar as bordas */
+  cursor: pointer;
+}
+
+/* Falando para o 'img' e o 'span' ocuparem a mesma área, para que um fique por cima do outro com o 'grid-area: 1/1;' */
+
+.photo img {
+  grid-area: 1/1;
+}
+
+.visualizacao {
+  grid-area: 1/1;
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFF;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.visualizacao::before {
+  content: '';
+  width: 16px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 0.25rem;
+  background: url('../../Assets/visualizacao.svg') no-repeat;
+}
+
+.photo:hover .visualizacao{
+  display: flex;
+
+}
