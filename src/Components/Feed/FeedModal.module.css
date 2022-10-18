@@ -1,0 +1,17 @@
+.modal {
+  position: fixed; /* para ficar fixo na tela*/
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .4);
+  top: 0;
+  left: 0;
+  display: flex; /* Para que a gente consiga posicioanr os elementos dentro */
+  z-index: 1000; /* Para ficar acima de tudo */
+  padding: 2rem calc(4rem + 15px) 2rem 4rem; /* Fazendo o calc por conta da barra de scroll, que na maioria dos navegadores é 15px */
+}
+
+@media (max-width: 40rem) {
+  .modal {
+  padding: 2rem calc(2rem + 15px) 2rem 2rem;
+  }
+}

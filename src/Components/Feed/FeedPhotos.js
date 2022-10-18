@@ -4,10 +4,10 @@ import useFetch from '../../Hooks/useFetch';
 import { PHOTOS_GET } from '../../api';
 import Error from '../Helper/Error';
 import Loading from '../Helper/Loading';
-import styles from './FeedPhotos.module.css'
+import styles from './FeedPhotos.module.css';
 
 // feed incluindo todas as fotos
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
   // puxar os itens e fazer uma fetch
   const { data, loading, error, request } = useFetch();
 
@@ -29,7 +29,11 @@ const FeedPhotos = () => {
       <ul className={`${styles.feed} animeLeft`}>
         {/* pecorrendo o 'data', e para cada foto ele irá chamar o 'feedPhotosItem' passando a foto */}
         {data.map((photo) => (
-          <FeedPhotosItem key={photo.id} photo={photo} />
+          <FeedPhotosItem
+            key={photo.id}
+            photo={photo}
+            setModalPhoto={setModalPhoto} // passando o 'setModalPhoto' como propriedade, tendo que ir lá no 'FeedPhotosItem' e lidar com essa mudança
+          />
         ))}
       </ul>
     );

@@ -1,0 +1,93 @@
+.photo {
+  margin: auto; /* Colocando ela sempre no centro*/
+  height: 36rem;
+  border-radius: .2rem;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 36rem 20rem; /* Colocando a altura baseado no tamanho da foto*/
+  grid-template-rows: auto 1fr auto ; /* Assim deixando o contreúdo encima, u espaço no meio e depois o input para comentar */
+  overflow: hidden; /* Para esconder tudo que fica fora dele */
+  opacity: 0;
+  transform: scale(.8); /* Assim ele começando com 0.8 do seu tamanho normal */
+  animation: scaleUp .3s forwards;
+   
+}
+
+@keyframes scaleUp {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.details {
+  padding: 2rem 2rem 0 2rem; /* Dando espaçamento para a parte do conteúdo escrito */
+}
+
+.img {
+  grid-row: 1/4; /* Assim falando para ele ocupar todas as linhas, por conta dos comentários */
+}
+
+.comments {
+  padding: 0 2rem;
+}
+
+/* sendo o valor baseado na largura das colunas + os 4rem padrão que tenho para cada lado */
+@media (max-width: 64rem) {
+  .photo {
+    height: auto;
+    max-height: calc(100vh - 4rem); /* Fazendo um calculo com o total da tela mais 2 rem de cima e em baixo */
+    overflow-y: auto; /* Gerando um scroll */
+    grid-template-columns: minmax(20rem, 40rem); /* Tendo assim apenas uma coluna, deixando os comentário para baixo */
+  }
+
+  .img {
+    grid-row: 1; /* ocupando assim apenas uma linha*/
+  }
+}
+
+
+.author {
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author a:hover {
+  text-decoration: underline;
+}
+
+.visualizacoes::before {
+  content: '';
+  display: inline-block; /* Sem isso ele não aprece*/
+  height: 10px;
+  width: 16px;
+  margin-right: .5rem;
+  background: url('../../Assets/visualizacao-black.svg');
+}
+
+.attrubutes {
+  display: flex;
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.attrubutes li {
+  margin-right: 2rem;
+}
+
+.attrubutes li::before {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 2px;
+  margin-right: .5rem;
+  position: relative;
+  top: 3px;
+  background: #333;
+  margin-top: 5px;
+}

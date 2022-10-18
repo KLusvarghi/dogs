@@ -84,3 +84,14 @@ export function PHOTOS_GET({page, total, user}) { // recebendo emial, username e
     },
   };
 }
+
+export function PHOTO_GET(id) { // recebendo apenas o id para abrir a foto
+  return {
+    // sendo padronizado isso na Api
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store' // não tendo cache por causa se um usuário postar uma foto nova ela não irá aparecer
+    },
+  };
+}
