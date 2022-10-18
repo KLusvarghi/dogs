@@ -72,3 +72,15 @@ export function PHOTO_POST(formData, token) { // recebendo emial, username e sen
     },
   };
 }
+
+// querendo puxar a página, total de itens que eu quero pegar e de qual usuário eu quero
+export function PHOTOS_GET({page, total, user}) { // recebendo emial, username e senha, que é o body
+  return {
+    // sendo padronizado isso na Api
+    url: `${API_URL}/api/photo?_page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store' // não tendo cache por causa se um usuário postar uma foto nova ela não irá aparecer
+    },
+  };
+}
