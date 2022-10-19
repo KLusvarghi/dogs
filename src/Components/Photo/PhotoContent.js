@@ -4,6 +4,7 @@ import UserContext from '../../UserContext';
 import PhotoComents from './PhotoComents';
 import styles from './PhotoContent.module.css';
 import PhotoDelete from './PhotoDelete';
+import Image from '../Helper/Image'
 
 const PhotoContent = ({ data }) => {
   const { photo, comments } = data; // desestruturando o que vem de data
@@ -15,7 +16,8 @@ const PhotoContent = ({ data }) => {
   return (
     <div className={styles.photo}>
       <div className={styles.img}>
-        <img src={photo.src} alt={photo.title} />
+        {/* a imagem será renderizado nesse componente */}
+        <Image src={photo.src} alt={photo.title}/>
       </div>
       <div className={styles.details}>
         <div>

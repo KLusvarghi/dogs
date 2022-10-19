@@ -1,0 +1,29 @@
+.wrapper {
+  display: grid;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  grid-area: 1/1; /* Para deixar os itnes um em cima do outro*/
+  opacity: 0; /* A opacidade dele será modificada via js*/
+  transition: .2s;
+}
+
+.skeleton {
+  grid-area: 1/1; /* Para deixar os itnes um em cima do outro*/
+  height: 100%;
+  background-image: linear-gradient(90deg, #eee 0px, #fff 50%, #eee 100%);
+  
+  /* tendo que colocar o backgroud maior do que os 100% */
+  background-size: 200%;
+  animation: skeleton 1.5s infinite linear;
+}
+
+@keyframes skeleton {
+  from {
+    background-position: 0px;
+  }to{
+    background-position: -200px;
+  }
+}
