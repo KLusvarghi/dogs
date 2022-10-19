@@ -7,6 +7,7 @@ import UserContext from '../../UserContext';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 
+// responsvel por cadastrar novos usuários
 const LoginCreate = () => {
   const username = useForm(); // para fazer validação por tipo de input, porem nesse caso não tem nenhum tipo
   const email = useForm('email');

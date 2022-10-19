@@ -1,0 +1,62 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch; /* Para espandir os itens*/
+  margin: 1rem;
+}
+
+.textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: var(--type-first);
+  resize: none; /* para que não seja possivel ficar alterando o tamanho do textarea */
+  border: 1px solid #eee;
+  padding: .5rem;
+  background: #eee;
+  transition: 0.2s; /* Sendo o tempo de transição para o hover */
+}
+
+.textarea:hover,
+.textarea:focus {
+  outline: none;
+  border-color: #fb1;
+  background: #FFF;
+  box-shadow: 0 0 0 3px #fea;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+  overflow: hidden; /* Para que não crie scroll */
+}
+
+/* como eu quero modificar o que tem dentro dele, tenho que falar diretamente com o 'path'  */
+.btn:hover svg path,
+.btn:focus svg path {
+  fill: #fea;
+  stroke: #fb1; /* sendo o 'stroke' a linha do svg */
+}
+
+/*
+ criando um efeito de latir modificando os path's que contem os traços que simbolizam o latido, apenas modificando a opacidade deles
+ */
+
+ /* no caso foi criado um grupo contendo os path's que tem os traços do latido, então basta falar diretamente com eles */
+
+.btn:hover svg g,
+.btn:focus svg g {
+  animation: latir .5s infinite;
+}
+
+ @keyframes latir {
+  from {
+    opacity: 0;
+  }to {
+    opacity: 1;
+  }
+ }

@@ -95,3 +95,20 @@ export function PHOTO_GET(id) { // recebendo apenas o id para abrir a foto
     },
   };
 }
+
+// Função responsavel por enviar os comentários
+export function COMMENT_POST(id, body) { 
+  return {
+    url: `${API_URL}/api/comment/${id}`, // sendo essa a url para comentários
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        // como o usuário já está logado, ele puxa o token direto do localstorage
+        authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+      body: JSON.stringify(body)
+    },
+  };
+}
+
