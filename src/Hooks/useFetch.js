@@ -10,6 +10,7 @@ const useFetch = () => {
 
   // criando uma função de request, criando ela dentro de um callback para que ela não seja recriada toda vez que a gente utilizar o useFetch
 
+  // essa função é uma função padrão para que seja reutilizada por todo o projeto, apenas fazendo o fetch para a determinada url que passar, apenas precisando a url em si e as options que devem ser passadas por parametro na hora de chamar essa função
   const request = React.useCallback(async (url, options) => {
     let response;
     let json;

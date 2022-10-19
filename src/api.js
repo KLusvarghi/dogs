@@ -112,3 +112,18 @@ export function COMMENT_POST(id, body) {
   };
 }
 
+// função responsavel por retornar a url e options para que sejá feito o delete quando for chamada e feita o fetch com o 'request' do useFetch
+export function PHOTO_DELETE(id) { 
+  return {
+    url: `${API_URL}/api/photo/${id}`, // sendo essa a url para comentários
+    options: {
+      // assim enviando um tipo de método 'delete' para a foto com o determinado id
+      method: 'DELETE',
+      headers: {
+        // como o usuário já está logado, ele puxa o token direto do localstorage
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+    },
+  };
+}
+
