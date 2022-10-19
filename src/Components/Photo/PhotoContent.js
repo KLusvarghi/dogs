@@ -4,7 +4,7 @@ import PhotoComents from './PhotoComents';
 import styles from './PhotoContent.module.css';
 
 const PhotoContent = ({ data }) => {
-  const { photo, coments } = data; // desestruturando o que vem de data
+  const { photo, comments } = data; // desestruturando o que vem de data
 
   
   return (
@@ -28,7 +28,8 @@ const PhotoContent = ({ data }) => {
             </ul>
           </div>
         </div>
-        <PhotoComents id={photo.id}  />
+        {/* para eu comentar em uma foto eu preciso saber o id de uma foto, passando ela como parametro, e passando os comentários que vem do 'data' */}
+        <PhotoComents id={photo.id} comments={comments}  />
     </div>
   );
 };

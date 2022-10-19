@@ -1,0 +1,11 @@
+.comments {
+  overflow-y: auto; /* Dizendo para o elemento que ele poderá ter uma barra de scroll na vertical (y), por que caso tenha muitos comentários na foto, ele não jogue o textarea lá para baixo, assim não deixando sua área maior do que 1fr, e criando uma barra de scroll */
+
+  word-wrap: break-word; /* para quebrar palavras grande*/
+  padding: 0 2rem;
+}
+
+.comments li{
+  margin-bottom: 0.5rem;
+  line-height:  1.2;
+}
