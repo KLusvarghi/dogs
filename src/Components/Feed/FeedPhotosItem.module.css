@@ -18,9 +18,10 @@
   cursor: pointer;
 }
 
-/* Falando para o 'img' e o 'span' ocuparem a mesma área, para que um fique por cima do outro com o 'grid-area: 1/1;' */
+/* Falando para o 'div' e o 'span' ocuparem a mesma área, para que um fique por cima do outro com o 'grid-area: 1/1;' */
 
-.photo img {
+/* como tem o skeleton, o filho direto agora é o 'div' e não mais o 'img' */
+.photo > div {
   grid-area: 1/1;
 }
 
