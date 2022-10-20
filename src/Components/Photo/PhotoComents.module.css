@@ -9,3 +9,9 @@
   margin-bottom: 0.5rem;
   line-height:  1.2;
 }
+
+/* estilização para quando abrir em uma página única a foto */
+
+.single.comments {
+  padding: 0px;
+}

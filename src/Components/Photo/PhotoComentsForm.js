@@ -5,7 +5,7 @@ import { COMMENT_POST } from '../../api';
 import Error from '../Helper/Error'
 import styles from './PhotoComentsForm.module.css'
 
-const PhotoComentsForm = ({ id, setComentarios}) => {
+const PhotoComentsForm = ({ id, setComentarios, single}) => {
   const [comment, setComment] = React.useState('');
 
   // ao enviar o formulário terá que fazer um fetch, assim, chamando o nosso hook 'useFetch'
@@ -32,7 +32,7 @@ const PhotoComentsForm = ({ id, setComentarios}) => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={`${styles.form} ${single ? styles.single : ''}`} onSubmit={handleSubmit}>
       <textarea
       className={styles.textarea}
         value={comment}

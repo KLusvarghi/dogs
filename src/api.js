@@ -85,6 +85,7 @@ export function PHOTOS_GET({page, total, user}) { // recebendo emial, username e
   };
 }
 
+// função responsvel por obter apenas uma foto baseado no id da foto
 export function PHOTO_GET(id) { // recebendo apenas o id para abrir a foto
   return {
     // sendo padronizado isso na Api

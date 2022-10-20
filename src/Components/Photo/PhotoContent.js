@@ -6,7 +6,8 @@ import styles from './PhotoContent.module.css';
 import PhotoDelete from './PhotoDelete';
 import Image from '../Helper/Image'
 
-const PhotoContent = ({ data }) => {
+// recebendo por parametro 'sigle' que será para quando fro abrir a foto não no modal, e sim em umá página unica, passando uma estilziação diferente
+const PhotoContent = ({ data, single}) => {
   const { photo, comments } = data; // desestruturando o que vem de data
 
   // vem qual o usuário logado através do meu contexto
@@ -14,7 +15,8 @@ const PhotoContent = ({ data }) => {
   // console.log(user.data.username) // me retorna o usuário logado
 
   return (
-    <div className={styles.photo}>
+    // fazendo essa verificação "sigle ? styles.sigle : ''" por que se eu faço a verificação com "&&" ele adiciona uma classe 'undefined'
+    <div className={`${styles.photo} ${single ? styles.single : ''}`}>
       <div className={styles.img}>
         {/* a imagem será renderizado nesse componente */}
         <Image src={photo.src} alt={photo.title}/>
@@ -42,7 +44,7 @@ const PhotoContent = ({ data }) => {
         </div>
       </div>
       {/* para eu comentar em uma foto eu preciso saber o id de uma foto, passando ela como parametro, e passando os comentários que vem do 'data' */}
-      <PhotoComents id={photo.id} comments={comments} />
+      <PhotoComents single={single} id={photo.id} comments={comments} />
     </div>
   );
 };

@@ -35,6 +35,11 @@
   overflow: hidden; /* Para que não crie scroll */
 }
 
+.btn:focus,
+.btn:hover {
+  outline: none;
+}
+
 /* como eu quero modificar o que tem dentro dele, tenho que falar diretamente com o 'path'  */
 .btn:hover svg path,
 .btn:focus svg path {
@@ -60,3 +65,11 @@
     opacity: 1;
   }
  }
+
+ 
+
+/* estilização para quando abrir em uma página única a foto */
+
+.single.form {
+  margin: 1rem 0;
+}

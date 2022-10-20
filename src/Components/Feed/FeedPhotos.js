@@ -23,7 +23,7 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
       // console.log(json); // me retoran as informações da foto
 
       // assim verificando se o response está certo, que dizer que ao fetch deu certo e verificando se o json é menor que total, que quer dizer que acabou a quantidade de fotos para ser renderizada
-      console.log('Requet of photos: ', json)
+      // console.log('Requet of photos: ', json)
       if (response && response.ok && json.length < total) setInfinite(false);
       
     }

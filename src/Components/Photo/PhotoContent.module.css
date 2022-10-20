@@ -28,9 +28,6 @@
   grid-row: 1/4; /* Assim falando para ele ocupar todas as linhas, por conta dos comentários */
 }
 
-.comments {
-  padding: 0 2rem;
-}
 
 /* sendo o valor baseado na largura das colunas + os 4rem padrão que tenho para cada lado */
 @media (max-width: 64rem) {
@@ -90,4 +87,22 @@
   top: 3px;
   background: #333;
   margin-top: 5px;
+}
+
+
+/* estilzação para o 'sigle', que é quando a página abrir em uma página única */
+
+.single.photo {
+ grid-template-columns: 1fr; /* Porem quando coloco tudo em uma coluna ele coloca os textos encima da foto */
+ height: auto; /* Tirando o hight de fixo para auto*/
+}
+
+.single .img {
+  grid-row: 1;
+  border-radius: .4rem;
+  overflow: hidden;
+}
+
+.single .details {
+  padding: 1rem 0px 0px 0px;
 }
