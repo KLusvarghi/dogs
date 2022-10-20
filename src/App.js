@@ -9,6 +9,7 @@ import { UserStorage } from './UserContext';
 import User from './Components/User/User';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import Photo from './Components/Photo/Photo'
+import UserProfile from './Components/User/UserProfile'
 
 const App = () => {
   return (
@@ -27,6 +28,9 @@ const App = () => {
 
             {/* Passando o id de forma dinámica, tendo acesso ao 'id' atrvés do useParams */}
             <Route path="foto/:id" element={<Photo/>}/>
+
+            {/* então quando nesta rota dinamica, sendo esperando um 'user', será renderizado o componente  'UserProfile' */}
+            <Route path="perfil/:user" element={<UserProfile />}/>
           </Routes>
           <Footer />
         </UserStorage>
