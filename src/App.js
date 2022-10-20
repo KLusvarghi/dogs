@@ -10,6 +10,7 @@ import User from './Components/User/User';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
 import Photo from './Components/Photo/Photo'
 import UserProfile from './Components/User/UserProfile'
+import NotFound from './Components/NotFound';
 
 const App = () => {
   return (
@@ -31,6 +32,10 @@ const App = () => {
 
             {/* então quando nesta rota dinamica, sendo esperando um 'user', será renderizado o componente  'UserProfile' */}
             <Route path="perfil/:user" element={<UserProfile />}/>
+
+            {/* caminho para página 404, porem tenho que passar essa rota para os itens que tem sub rotas */}
+            {/* o '*' quer dizer que qualquer rota diferente das que foram passadas cairá no componente 'NotFound' */}
+            <Route path="*" element={<NotFound />}/>
           </Routes>
           <Footer />
         </UserStorage>
