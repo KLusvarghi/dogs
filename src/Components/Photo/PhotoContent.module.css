@@ -61,7 +61,7 @@
   display: inline-block; /* Sem isso ele não aprece*/
   height: 10px;
   width: 16px;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   background: url('../../Assets/visualizacao-black.svg');
 }
 
@@ -99,7 +99,7 @@
 
 .single .img {
   grid-row: 1;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   overflow: hidden;
 }
 

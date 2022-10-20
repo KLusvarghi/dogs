@@ -92,6 +92,9 @@ export const UserStorage = ({ children }) => {
     // tendo que passar como dependencia qualquer função criado fora
   }, [userLogOut, navigate]);
 
+
+  
+
   return (
     // para poder passar a informação do userStorage para o header e os o outros componentes, é por meio do "value"
     // Assim tendo acesso ao método 'userLogin' em qualuer lugar que o meu userContext for aplicado

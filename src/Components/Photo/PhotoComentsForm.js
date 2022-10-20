@@ -34,7 +34,7 @@ const PhotoComentsForm = ({ id, setComentarios, single}) => {
   return (
     <form className={`${styles.form} ${single ? styles.single : ''}`} onSubmit={handleSubmit}>
       <textarea
-      className={styles.textarea}
+        className={styles.textarea}
         value={comment}
         // atribuindo o que o usuário comentar ao 'setComment'
         onChange={({ target }) => setComment(target.value)}

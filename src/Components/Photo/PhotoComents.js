@@ -7,7 +7,7 @@ import styles from './PhotoComents.module.css';
 const PhotoComents = (props) => {
   // como já está em props, tendo acesso ao sigle tambem
   // passando um callback que vai rodar só uma vez e vaio definir o estádo inicial
-  const [comentarios, setComentarios] = React.useState(() => props.comments); // tendo como valor inicial os comentários
+  const [comments, setComments] = React.useState(() => props.comments); // tendo como valor inicial os comentários
 
   const { login } = React.useContext(UserContext);
   // desestruturando e pegando a variavel Reativa 'login' que retorna do 'UserCOntext', que é se o usuário está logado ou não
@@ -20,7 +20,7 @@ const PhotoComents = (props) => {
   React.useEffect(() => {
     // sendo 'commentsSection.current.scrollTop' para atpe onde irá fazer o scroll, tendo assim que passar o valor do tamanho total de 'commentsSection'
     commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
-  }, [comentarios]); // toda vezs que os comentários mudar ele adicioanr o efeito
+  }, [comments]); // toda vezs que os comentários mudar ele adicioanr o efeito
 
   return (
     <>
@@ -29,11 +29,11 @@ const PhotoComents = (props) => {
         ref={commentsSection}
         className={`${styles.comments} ${props.single ? styles.single : ''}`}
       >
-        {comentarios &&
-          comentarios.map((comentario) => (
-            <li key={comentario.comment_ID}>
-              <b>{comentario.comment_author}: </b> {/* Sendo o nome do autor */}
-              <span>{comentario.comment_content}</span>{' '}
+        {comments &&
+          comments.map((comment) => (
+            <li key={comment.comment_ID}>
+              <b>{comment.comment_author}: </b> {/* Sendo o nome do autor */}
+              <span>{comment.comment_content}</span>
               {/* Sendo o conteudo do comentário */}
             </li>
           ))}
@@ -44,7 +44,7 @@ const PhotoComents = (props) => {
         <PhotoComentsForm
           single={props.single}
           id={props.id}
-          setComentarios={setComentarios}
+          setComments={setComments}
         />
       )}
 

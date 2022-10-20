@@ -44,7 +44,12 @@ const LoginPasswordReset = () => {
     <div>
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
-        <Input label="Nova senha" type="password" name="password" {...password} />
+        <Input 
+          label="Nova senha" 
+          type="password" 
+          name="password" 
+          {...password} 
+        />
         {loading ? (
           <Button disable>Resetando...</Button>
         ) : (

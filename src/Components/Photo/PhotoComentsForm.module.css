@@ -5,6 +5,12 @@
   margin: 1rem;
 }
 
+/* estilização para quando abrir em uma página única a foto */
+
+.single.form {
+  margin: 1rem 0;
+}
+
 .textarea {
   display: block;
   width: 100%;
@@ -12,7 +18,7 @@
   font-family: var(--type-first);
   resize: none; /* para que não seja possivel ficar alterando o tamanho do textarea */
   border: 1px solid #eee;
-  padding: .5rem;
+  padding: 0.5rem;
   background: #eee;
   transition: 0.2s; /* Sendo o tempo de transição para o hover */
 }
@@ -65,11 +71,3 @@
     opacity: 1;
   }
  }
-
- 
-
-/* estilização para quando abrir em uma página única a foto */
-
-.single.form {
-  margin: 1rem 0;
-}

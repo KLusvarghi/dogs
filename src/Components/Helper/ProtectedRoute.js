@@ -6,7 +6,7 @@ import UserContext from '../../UserContext'
 
 
 // Acessando o componente a ser renderizado caso o login der true através do children. Que dentro do props eu tenho o children que é uma prorpiedade que tem sempre qualuqer elemente que está dentro do elemento que eu abro e fecho ele, que no caso é o 'ProtectedRoute'
-const ProtectedRoute = ({children}) => {
+const ProtectedRoute = ({children}) => { // sendo 'children' o componente 'User'
   // Querendo pegar apenas o 'login' que retorna true ou false dependendo se o usuario estiver logado ou não
   const { login } = React.useContext(UserContext)
   

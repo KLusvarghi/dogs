@@ -8,8 +8,8 @@ import Login from './Components/Login/Login';
 import { UserStorage } from './UserContext';
 import User from './Components/User/User';
 import ProtectedRoute from './Components/Helper/ProtectedRoute';
-import Photo from './Components/Photo/Photo'
-import UserProfile from './Components/User/UserProfile'
+import Photo from './Components/Photo/Photo';
+import UserProfile from './Components/User/UserProfile';
 import NotFound from './Components/NotFound';
 
 const App = () => {
@@ -24,18 +24,26 @@ const App = () => {
             {/* tendo que dizer que dentro de /login teá outras subrotas, passando o '/*'  */}
             <Route path="login/*" element={<Login />} />
             {/* criando o componente de conta, tendo '*' por que haverá subrotas dentro dela, passando o elemento 'ProtectedRoute' que é um componente que verifica se o usuário está com o login feito */}
-            <ProtectedRoute path="conta/*" element={<User />}></ProtectedRoute>
+            <Route
+              path="conta/*"
+              element={
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
+
             {/* Assim passando o user para receber ele dentro do componente 'User.js' */}
 
             {/* Passando o id de forma dinámica, tendo acesso ao 'id' atrvés do useParams */}
-            <Route path="foto/:id" element={<Photo/>}/>
+            <Route path="foto/:id" element={<Photo />} />
 
             {/* então quando nesta rota dinamica, sendo esperando um 'user', será renderizado o componente  'UserProfile' */}
-            <Route path="perfil/:user" element={<UserProfile />}/>
+            <Route path="perfil/:user" element={<UserProfile />} />
 
             {/* caminho para página 404, porem tenho que passar essa rota para os itens que tem sub rotas */}
             {/* o '*' quer dizer que qualquer rota diferente das que foram passadas cairá no componente 'NotFound' */}
-            <Route path="*" element={<NotFound />}/>
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </UserStorage>
