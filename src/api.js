@@ -128,3 +128,31 @@ export function PHOTO_DELETE(id) {
   };
 }
 
+// função responsavel por pegar as propriedades para fazer um fetch para quando perder a senha
+export function PASSWORD_LOST(body) {
+  return {
+    url: API_URL + '/api/password/lost',
+    options: {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+  }
+}
+
+
+// Função responsavel por resetar a password
+export function PASSWORD_RESET(body) {
+  return {
+    url: API_URL + '/api/password/reset',
+    options: {
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    }
+  }
+}

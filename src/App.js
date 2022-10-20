@@ -25,7 +25,7 @@ const App = () => {
             <Route path="login/*" element={<Login />} />
             {/* criando o componente de conta, tendo '*' por que haverá subrotas dentro dela, passando o elemento 'ProtectedRoute' que é um componente que verifica se o usuário está com o login feito */}
             <ProtectedRoute path="conta/*" element={<User />}></ProtectedRoute>
-            {/* Assim passando o user para receber ele dentro do componente 'Use.js' */}
+            {/* Assim passando o user para receber ele dentro do componente 'User.js' */}
 
             {/* Passando o id de forma dinámica, tendo acesso ao 'id' atrvés do useParams */}
             <Route path="foto/:id" element={<Photo/>}/>
