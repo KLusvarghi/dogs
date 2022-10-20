@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Loading.module.css';
 
 const Loading = () => {
+  // estado reativo que irá conter um valor que cada vez alterado adicona uma classe de estilização para cada path
   const [step, setStep] = React.useState(0)
 
 
