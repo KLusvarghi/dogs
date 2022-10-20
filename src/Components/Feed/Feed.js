@@ -1,6 +1,7 @@
 import React from 'react';
 import FeedModal from './FeedModal';
 import FeedPhotos from './FeedPhotos';
+import PropTypes from 'prop-types';
 
 // Sendo aqui onde irá aparece na aba 'conta' os posts especificos que o priprio usuário passou, ou entrando no perfil de outros usuários e conte4ndo apenas os posts dele(a)
 
@@ -16,7 +17,6 @@ const Feed = ({ user }) => {
   const [infinite, setInfinite] = React.useState(true);
 
   // o 'infinite' só receberá false quando verificarmos que a array de paginas for menor que 3, por que até então é exibido 3 fotos por página, o que significa que se ele for menor que 3, acabou as fotos
-
 
   // efeito responsavel o=por fazer o scroll infinito de posts
   React.useEffect(() => {
@@ -51,8 +51,6 @@ const Feed = ({ user }) => {
     };
   }, [infinite]);
 
-
-
   return (
     <section>
       {/* só exibindo se o modal for diferente de null e passando a foto como parametro */}
@@ -86,6 +84,21 @@ const Feed = ({ user }) => {
       )}
     </section>
   );
+};
+// sendo de boa prática usar o PropType para qualquer component que for receber uma props
+
+// é um método que por padrão, se não for passado nada, o 'user' terá esse valor dentro do feed
+Feed.defaultProps = {
+  user: 0,
+};
+
+// sendo esse propType para verificar o tipo de dados inseridos
+Feed.prototype = {
+  // para passar mais de um tipo de valor para uma variável
+  user: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
 };
 
 export default Feed;
