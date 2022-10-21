@@ -102,3 +102,12 @@
 .AppBody {
   flex: 1; /* Assim ele irá se expandir ao máximo que der*/
 }
+
+
+/* falando com o gráfico */
+
+/* por padrão ele da um heigth de 100%, isso impede que conseguimos centralizar ele, indo no inpecionar ele da uma classe */
+
+.VictoryContainer {
+  height: initial !important;
+}
