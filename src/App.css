@@ -89,3 +89,16 @@
     transform: initial;
   }
 }
+
+/* para que ao carregar a página o footer não fique aparecendo vamos definir valores padrões  */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  /* tendo um minimo de altura do tamanho total da tela mais 10rem que é o tamanho definido no css para corpo */
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1; /* Assim ele irá se expandir ao máximo que der*/
+}

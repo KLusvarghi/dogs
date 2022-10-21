@@ -7,6 +7,8 @@ import useFetch from '../../Hooks/useFetch';
 import { PHOTO_POST } from '../../api';
 import Error from '../Helper/Error';
 import { useNavigate } from 'react-router-dom';
+import Head from '../Helper/Head'
+
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -48,6 +50,8 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto" description="Página para postar sua foto no site Dogs"/>
+
       <form onSubmit={handleSubmit}>
         <Input label="nome" type="text" name="nome" {...nome} />
         {/* para que de certo e não de erro '422' que é de dados incompletos, tem que desestruturar o restante das props */}

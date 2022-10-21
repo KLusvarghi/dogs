@@ -6,6 +6,7 @@ import { USER_POST } from '../../api';
 import UserContext from '../../UserContext';
 import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
+import Head from '../Helper/Head'
 
 // responsvel por cadastrar novos usuários
 const LoginCreate = () => {
@@ -38,7 +39,10 @@ const LoginCreate = () => {
   }
 
   return (
+
     <section className="animeLeft">
+      <Head title="Cadastre-se" description="Página de cadastro do site Dogs"/>
+
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />

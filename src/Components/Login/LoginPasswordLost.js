@@ -5,6 +5,8 @@ import useForm from '../../Hooks/useForm';
 import useFetch from '../../Hooks/useFetch';
 import { PASSWORD_LOST } from '../../api';
 import Error from '../Helper/Error';
+import Head from '../Helper/Head'
+
 
 // Componente responsavel por verificar o usuario / email digitado para o usuário e enviar um email para ele
 const LoginPasswordLost = () => {
@@ -35,6 +37,8 @@ const LoginPasswordLost = () => {
 
   return (
     <section>
+      <Head title="Perdeu a senha?" description="Página resetar a senha do site Dogs"/>
+
       <h1 className="title">Perdeu a senha?</h1>
       {/* exibindo o data caso ele exista, e caso contrário ele exibe o formuláro */}
       {data ? (

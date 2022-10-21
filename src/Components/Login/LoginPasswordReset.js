@@ -6,6 +6,7 @@ import useFetch from '../../Hooks/useFetch';
 import { PASSWORD_RESET } from '../../api';
 import Error from '../Helper/Error';
 import { useNavigate } from 'react-router-dom';
+import Head from '../Helper/Head'
 
 // ao clicar no link para resetar a senha ele jogará para a página de resetar com uma key
 
@@ -42,6 +43,8 @@ const LoginPasswordReset = () => {
 
   return (
     <div>
+      <Head title="Resete a senha" description="Página de cadastro do site Dogs"/>
+
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input 
