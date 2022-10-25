@@ -30,7 +30,6 @@ const UserStatsGraphs = ({ data }) => {
     );
 
     setGraph(graphData);
-    console.log(data)
   }, [data]);
 
   return (
@@ -58,7 +57,7 @@ const UserStatsGraphs = ({ data }) => {
                 },
                 labels: {
                   fontSize: 16,
-                  // fontWeight: 'bold',
+                  fontWeight: 'bold',
                   fill: '#333',
                 },
               }}
@@ -70,11 +69,11 @@ const UserStatsGraphs = ({ data }) => {
               <VictoryBar
                 alignment="start"
                 data={graph}
-                // style={{
-                //   labels: {
-                //     fontWeight: 'bold',
-                //   },
-                // }}
+                style={{
+                  labels: {
+                    fontWeight: 'bold',
+                  },
+                }}
               ></VictoryBar>
             </VictoryChart>
           </div>
