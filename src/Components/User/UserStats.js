@@ -4,11 +4,10 @@ import useFetch from '../../Hooks/useFetch'
 import { STATS_GET } from '../../api'
 import Error from '../Helper/Error'
 import Loading from '../Helper/Loading'
-// import UserStatsGraphs from './UserStatsGraphs'
 
 const UserStatsGraphs = React.lazy(() => import('./UserStatsGraphs'))
 
-// sendo esse o componente que faz a busca dos dados
+// sendo esse o componente que faz a busca dos dados para que o componente 'UserStatsGraphs' exiba os dados buscados
 const UserStats = () => {
 
   const {data, error, loading, request} = useFetch()

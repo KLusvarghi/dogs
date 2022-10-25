@@ -1,11 +1,11 @@
 import React from 'react';
 import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
 import useFetch from '../../Hooks/useFetch'
-import { COMMENT_POST } from '../../api';
 import Error from '../Helper/Error'
+import { COMMENT_POST } from '../../api';
 import styles from './PhotoComentsForm.module.css'
 
-const PhotoComentsForm = ({ id, setComentarios, single}) => {
+const PhotoComentsForm = ({ id, setComments, single}) => {
   const [comment, setComment] = React.useState('');
 
   // ao enviar o formulário terá que fazer um fetch, assim, chamando o nosso hook 'useFetch'
@@ -14,10 +14,9 @@ const PhotoComentsForm = ({ id, setComentarios, single}) => {
   async function handleSubmit(event){
     event.preventDefault()
 
-
     // puxando a url e options para passar para o request
     // passando o id e o comentario como objeto
-    const {url, options} = COMMENT_POST(id, {comment})
+    const {url, options} =  COMMENT_POST(id, { comment })
     // se eu tenho request, eu tenho que definir lá na minha api
     // sendo dentro do 'json' que tem o novo comentário
     const {response, json} = await request(url, options)
@@ -27,20 +26,23 @@ const PhotoComentsForm = ({ id, setComentarios, single}) => {
       // passando um callback para ter acesso aos comentários anteriores
       // assim passando dentro de um array os comentários anteriores mais os novos
       setComment('') // limpando o setComent para que não tenha nada no textarea para ser digitado
-      setComentarios((comments) => [...comments, json ])
+      setComments((comments) => [...comments, json ])
     }
   }
 
   return (
-    <form className={`${styles.form} ${single ? styles.single : ''}`} onSubmit={handleSubmit}>
+    <form 
+    className={`${styles.form} ${single ? styles.single : ''}`} 
+    onSubmit={handleSubmit}
+    >
       <textarea
         className={styles.textarea}
-        value={comment}
-        // atribuindo o que o usuário comentar ao 'setComment'
-        onChange={({ target }) => setComment(target.value)}
         name="comment"
         id="comment"
         placeholder='Comente...'
+        value={comment}
+        // atribuindo o que o usuário comentar ao 'setComment'
+        onChange={({ target }) => setComment(target.value)}
       />
       <button className={styles.btn}>
         <Enviar/>

@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
 // tudo que tiver aqui dentro, os componentes reativos como o 'name e password'
-
-
+// usado apenas para validar o tipo de input inserido em qualquer formulário
 const types = {
   email : {
     regex: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,

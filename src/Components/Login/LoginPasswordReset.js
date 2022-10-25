@@ -23,8 +23,9 @@ const LoginPasswordReset = () => {
     const key = params.get('key');
     const login = params.get('login');
 
+    // se os parametros requisitados forem true, sele seta os valores de 'key' and 'login'
     if (key) setKey(key);
-    if (login) setKey(login);
+    if (login) setLogin(login);
   }, []); // querendo que ocorra apenas uma vez
 
   async function handleSubmit(event) {

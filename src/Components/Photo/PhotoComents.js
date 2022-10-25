@@ -9,12 +9,15 @@ const PhotoComents = (props) => {
   // passando um callback que vai rodar só uma vez e vaio definir o estádo inicial
   const [comments, setComments] = React.useState(() => props.comments); // tendo como valor inicial os comentários
 
-  const { login } = React.useContext(UserContext);
-  // desestruturando e pegando a variavel Reativa 'login' que retorna do 'UserCOntext', que é se o usuário está logado ou não
 
   // para obter o tamanho da seção de comentários, par aao entrar na foto fazer um scroll automático para o ultimo comentário, basta usar o use.Ref()
 
   const commentsSection = React.useRef(null);
+
+
+  // desestruturando e pegando a variavel Reativa 'login' que retorna do 'UserCOntext', que é se o usuário está logado ou não
+  const { login } = React.useContext(UserContext);
+
 
   // efeito que toda vez que adicionar um novo comentário ele irá fazer um scroll para o ultimo comentário do post
   React.useEffect(() => {
@@ -29,8 +32,7 @@ const PhotoComents = (props) => {
         ref={commentsSection}
         className={`${styles.comments} ${props.single ? styles.single : ''}`}
       >
-        {comments &&
-          comments.map((comment) => (
+        {comments.map((comment) => (
             <li key={comment.comment_ID}>
               <b>{comment.comment_author}: </b> {/* Sendo o nome do autor */}
               <span>{comment.comment_content}</span>
@@ -47,7 +49,6 @@ const PhotoComents = (props) => {
           setComments={setComments}
         />
       )}
-
       {/* para eu comentar em uma foto eu preciso saber o id de uma foto */}
     </>
   );
