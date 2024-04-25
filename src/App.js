@@ -19,7 +19,7 @@ const App = () => {
         {/* tendo que envolver todo meu site com o userContext */}
         <UserStorage>
           <Header />
-          <main className='AppBody'>
+          <main className="AppBody">
             <Routes>
               <Route path="/" element={<Home />} />
               {/* tendo que dizer que dentro de /login teá outras subrotas, passando o '/*'  */}

@@ -47,7 +47,7 @@ const UserPhotoPost = () => {
       raw: target.files[0], // sendo isso aqui o que realmente iremos enviar para o formulário
     });
   }
-
+  
   return (
     <section className={`${styles.photoPost} animeLeft`}>
       <Head title="Poste sua foto" description="Página para postar sua foto no site Dogs"/>

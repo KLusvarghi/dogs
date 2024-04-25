@@ -21,7 +21,7 @@ const LoginPasswordLost = () => {
     // só fazendo esse processo se o validade retornar true
     if (login.validate()) {
       // tendo acesso ao método validade por conta do 'useForm'
-      // recebendo com oparametro o valor que o usuário digitou no login e a url que ele está que é:
+      // recebendo como parametro o valor que o usuário digitou no login e a url que ele está que é:
       const { url, options } = PASSWORD_LOST({
         login: login.value,
 

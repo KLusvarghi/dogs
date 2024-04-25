@@ -19,6 +19,7 @@ const useFetch = () => {
       setLoading(true);
       response = await fetch(url, options);
       json = await response.json();
+      console.log(json)
       if (response.ok === false) throw new Error(json.message);
     } catch (err) {
       json = null; // passando null para que na hora de setar o data, o processo não seja demorado passando json do fetch sendo que o 'response.ok' é false

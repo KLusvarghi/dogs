@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from './api';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const UserContext = React.createContext();
+export const UserContext = createContext();
 
 //  sendo esse o elemento que deverá envolver todos os outros elementos que terão acesso a esse contexto (UserContext)
 export const UserStorage = ({ children }) => {
@@ -11,6 +11,7 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  
   const navigate = useNavigate();
 
   // funçaõ para fazer logout do usuário

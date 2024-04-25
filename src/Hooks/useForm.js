@@ -31,10 +31,10 @@ const useForm = (type) => { // recebendo o tipo de input
       setError('Preencha um valor')
       return null
       // verificando se o tipo de validação existe e testando se o valor do input do determinado tipo passa pelo regex daquele tipo de input, neste caso negando para caso de erro
-    }else if(types[type] && !types[type].regex.test(value)) {
+    }else if(types[type] && !types[type].regex.test(value)) { //caso ocorra erro:
       setError(types[type].messege)
       return false // retornando falso por que não passou pela validação
-    }else {
+    }else { // caso dê tudo certo
       setError(null) // setando o valor do ERROR para null
       return true
     }

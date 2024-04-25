@@ -8,13 +8,11 @@ import UserContext from '../../UserContext'
 import NotFound from '../NotFound'
 import Head from '../Helper/Head'
 
-
-
-const Usuário = () => {
+const User = () => {
 
   const {data} = React.useContext(UserContext) 
-  // console.log(data.id) // me retornando o id do usuário
-
+  // console.log(data.id) // me retornando o id do User
+  
   return (
     <section className='container'>
       <Head title="Minha conta" description="Página da conta do usário do site Dogs"/>
@@ -30,4 +28,4 @@ const Usuário = () => {
   )
 }
 
-export default Usuário
+export default User

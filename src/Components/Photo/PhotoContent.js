@@ -9,7 +9,7 @@ import Image from '../Helper/Image'
 // recebendo por parametro 'sigle' que será para quando fro abrir a foto não no modal, e sim em umá página unica, passando uma estilziação diferente
 const PhotoContent = ({ data, single}) => {
   const { photo, comments } = data; // desestruturando o que vem de data
-
+  console.log(photo)
   // vem qual o usuário logado através do meu contexto
   const user = React.useContext(UserContext);
   // console.log(user.data.username) // me retorna o usuário logado

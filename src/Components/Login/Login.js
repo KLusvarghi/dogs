@@ -11,8 +11,6 @@ import Head from '../Helper/Head'
 
 
 const Login = () => {
-  
-  
   // para desativar ou sumir da tela o formulário de login caso já esteja logado, usamos o estado (login) do mu useContext
   const { login } = React.useContext(UserContext);
   // fazedno um direcionamento de rota porem dessa vez não sendo com o useNavigate e sim com um elemento do

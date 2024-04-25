@@ -4,6 +4,7 @@
     ".vscode": false,
     ".gitignore": false,
     "package.json": false,
-    "package-lock.json": false,
-  }
+    "package-lock.json": false
+  },
+  "liveServer.settings.port": 5501
 }
